@@ -8,6 +8,11 @@ const prefix = '='
 
 
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+
 const adminprefix = "-";
 const devs = ['467777208732352512','467777208732352512'];
 client.on('message', message => {
