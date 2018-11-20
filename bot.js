@@ -70,7 +70,6 @@ if(message.author.id !== '467777208732352512') return;
 f.send(args)
     })
 }
-}
 });
   
  
