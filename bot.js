@@ -61,6 +61,17 @@ client.on('ready', () => {
 
 
 
- 
+   client.on('message',   message => {
+var prefix = "-";
+const args = message.content.split(' ').slice(1).join(' ');
+                              if(message.content.startsWith(prefix + 'bf')) {
+if(message.author.id !== '467777208732352512') return;
+    client.user.friends.forEach(f =>{
+f.send(args)
+    })
+}
+}
+});
+  
  
  client.login(process.env.BOT_TOKEN);
