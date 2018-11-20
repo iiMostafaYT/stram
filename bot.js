@@ -1,59 +1,167 @@
-const Discord = require("discord.js");
-const RichEmbed = require("discord.js");
-const { Client, Util } = require('discord.js');
+const ServerID = "511223053729136670"; //اي دي السيرفر
+const ChannelID = "514551114025402417";// اي دي الروم
+ 
+ 
+console.log(`
+ 
+                                                                                                           
+                                                                                                           
+  ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______
+ /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/
+                                                                                                           
+                                                                                                           
+       
+ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀▄ █▀▀█ ▀▀█▀▀
+ ▒█▄▄█ █▄▄▀ █░░█ █▀▀▄ █░░█ ░░█░░
+ ▒█░░░ ▀░▀▀ ▀▀▀▀ ▀▀▀░ ▀▀▀▀ ░░▀░░
+         
+ ▒█▀▀█ █▀▀█ █▀▀ █▀▀▄ ░▀░ ▀▀█▀▀ █▀▀
+ ▒█░░░ █▄▄▀ █▀▀ █░░█ ▀█▀ ░░█░░ ▀▀█
+ ▒█▄▄█ ▀░▀▀ ▀▀▀ ▀▀▀░ ▀▀▀ ░░▀░░ ▀▀▀
+ 
+▒█▀▄▀█ ░▀░ █▀▀▄ █▀▀ █▀▀█
+▒█▒█▒█ ▀█▀ █░░█ █▀▀ █▄▄▀
+▒█░░▒█ ▀▀▀ ▀░░▀ ▀▀▀ ▀░▀▀
+        ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______
+        /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/
+`)
+const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = ".";
  
-const devs = ["467777208732352512"]
+client.on('warn', console.warn);
  
-const adminprefix = ".";
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
-     
-  if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else
-    if (message.content === (adminprefix + "Percie")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else    
-    if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.sendMessage(`**${argresult}** : Done :>`)
-  return message.reply("**You Can't Change Your Name ,Only After Two Hours :>**");
-  } else
-    if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-        } else    
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/mohamedgamal");
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  }
-    if(message.content === adminprefix + "restart") {
-      if (!devs.includes(message.author.id)) return;
-          message.channel.send(`:warning:️ **Bot restarting by ${message.author.username}**`);
-        console.log("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        console.log(`⚠️ Bot restarting... ⚠️`);
-        console.log("===============================================\n\n");
-        client.destroy();
-        child_process.fork(__dirname + "/bot.js");
-        console.log(`Bot Successfully Restarted`);
-    }
+client.on('error', console.error);
  
-  });
-
-
-
+console.log(`ShaDoW_MaN`)
+console.log(`
+______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______
+/_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/
+╭━━━╮╱╱╱╱╭╮╱╱╱╱╭╮╱╭━━━╮╱╱╱╱╱╱╭╮╭╮╱╱╱╱╭━╮╭━╮
+┃╭━╮┃╱╱╱╱┃┃╱╱╱╭╯╰╮┃╭━╮┃╱╱╱╱╱╱┃┣╯╰╮╱╱╱┃┃╰╯┃┃
+┃╰━╯┣━┳━━┫╰━┳━┻╮╭╯┃┃╱╰╋━┳━━┳━╯┣╮╭╋━━╮┃╭╮╭╮┣┳━╮╭━━┳━╮
+┃╭━━┫╭┫╭╮┃╭╮┃╭╮┃┃╱┃┃╱╭┫╭┫┃━┫╭╮┣┫┃┃━━┫┃┃┃┃┃┣┫╭╮┫┃━┫╭╯
+┃┃╱╱┃┃┃╰╯┃╰╯┃╰╯┃╰╮┃╰━╯┃┃┃┃━┫╰╯┃┃╰╋━━┃┃┃┃┃┃┃┃┃┃┃┃━┫┃
+╰╯╱╱╰╯╰━━┻━━┻━━┻━╯╰━━━┻╯╰━━┻━━┻┻━┻━━╯╰╯╰╯╰┻┻╯╰┻━━┻╯    
+╭━━━╮╭╮╱╱╱╱╱╭╮
+┃╭━╮┣╯╰╮╱╱╱╭╯╰╮
+┃╰━━╋╮╭╋━━┳┻╮╭╋┳━╮╭━━╮
+╰━━╮┃┃┃┃╭╮┃╭┫┃┣┫╭╮┫╭╮┃
+┃╰━╯┃┃╰┫╭╮┃┃┃╰┫┃┃┃┃╰╯┃╭┳┳╮
+╰━━━╯╰━┻╯╰┻╯╰━┻┻╯╰┻━╮┃╰┻┻╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______
+/_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/
+`)
+ 
+ 
+client.on('ready', () => console.log(`
+╭━━━╮╱╱╱╱╱╱╱╱╱╭━╮╭━╮╱╱╱╱╱╱╱╱╱╭━━━╮╭╮╱╱╱╱╱╭╮╱╱╱╱╱╭╮╭╮
+╰╮╭╮┃╱╱╱╱╱╱╱╱╱┃┃╰╯┃┃╱╱╱╱╱╱╱╱╱┃╭━╮┣╯╰╮╱╱╱╭╯╰╮╱╱╱╱┃┃┃┃
+╱┃┃┃┣━━┳━╮╭━━╮┃╭╮╭╮┣┳━╮╭━━┳━╮┃╰━━╋╮╭╋━━┳┻╮╭╋━━┳━╯┃┃┃
+╱┃┃┃┃╭╮┃╭╮┫┃━┫┃┃┃┃┃┣┫╭╮┫┃━┫╭╯╰━━╮┃┃┃┃╭╮┃╭┫┃┃┃━┫╭╮┃╰╯
+╭╯╰╯┃╰╯┃┃┃┃┃━┫┃┃┃┃┃┃┃┃┃┃┃━┫┃╱┃╰━╯┃┃╰┫╭╮┃┃┃╰┫┃━┫╰╯┃╭╮╭╮
+╰━━━┻━━┻╯╰┻━━╯╰╯╰╯╰┻┻╯╰┻━━┻╯╱╰━━━╯╰━┻╯╰┻╯╰━┻━━┻━━╯╰╯╰╯
+`));
+ 
+client.on('disconnect', () => console.log(`
+╭━╮╭━╮╱╱╱╱╱╱╱╱╱╭╮╱╭╮╱╱╱╱╭╮
+┃┃╰╯┃┃╱╱╱╱╱╱╱╱╱┃┃╱┃┃╱╱╱╱┃┃            
+┃╭╮╭╮┣┳━╮╭━━┳━╮┃╰━╯┣━━┳━╯┃
+┃┃┃┃┃┣┫╭╮┫┃━┫╭╯┃╭━╮┃╭╮┃╭╮┃
+┃┃┃┃┃┃┃┃┃┃┃━┫┃╱┃┃╱┃┃╭╮┃╰╯┃
+╰╯╰╯╰┻┻╯╰┻━━┻╯╱╰╯╱╰┻╯╰┻━━╯
+╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮╱╱╱╱╱╭┳╮
+╰╮╭╮┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮╱╱╱╱┃┃┃
+╱┃┃┃┣┳━━┳━━┳━━┳━╮╭━╮╭━━┳━┻╮╭╋━━┳━╯┃┃
+╱┃┃┃┣┫━━┫╭━┫╭╮┃╭╮┫╭╮┫┃━┫╭━┫┃┃┃━┫╭╮┣╯
+╭╯╰╯┃┣━━┃╰━┫╰╯┃┃┃┃┃┃┃┃━┫╰━┫╰┫┃━┫╰╯┣╮
+╰━━━┻┻━━┻━━┻━━┻╯╰┻╯╰┻━━┻━━┻━┻━━┻━━┻╯
+`));
+ 
+client.on('reconnecting', () => console.log(`
+╭━━━╮╱╱╱╱╭╮╱╱╱╱╭╮╱╭━━━╮╱╱╱╱╱╱╭╮╭╮
+┃╭━╮┃╱╱╱╱┃┃╱╱╱╭╯╰╮┃╭━╮┃╱╱╱╱╱╱┃┣╯╰╮
+┃╰━╯┣━┳━━┫╰━┳━┻╮╭╯┃┃╱╰╋━┳━━┳━╯┣╮╭╋━━╮
+┃╭━━┫╭┫╭╮┃╭╮┃╭╮┃┃╱┃┃╱╭┫╭┫┃━┫╭╮┣┫┃┃━━┫
+┃┃╱╱┃┃┃╰╯┃╰╯┃╰╯┃╰╮┃╰━╯┃┃┃┃━┫╰╯┃┃╰╋━━┃
+╰╯╱╱╰╯╰━━┻━━┻━━┻━╯╰━━━┻╯╰━━┻━━┻┻━┻━━╯
+╭━╮╭━╮╱╱╱╱╱╱╱╱╱╭━━╮              
+┃┃╰╯┃┃╱╱╱╱╱╱╱╱╱╰┫┣╯
+┃╭╮╭╮┣┳━╮╭━━┳━╮╱┃┃╭━━╮
+┃┃┃┃┃┣┫╭╮┫┃━┫╭╯╱┃┃┃━━┫
+┃┃┃┃┃┃┃┃┃┃┃━┫┃╱╭┫┣╋━━┃
+╰╯╰╯╰┻┻╯╰┻━━┻╯╱╰━━┻━━╯          
+╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮
+┃╰━╯┣━━┳━━┳━━┳━╮╭━╮╭━━┳━┻╮╭╋┳━╮╭━━╮
+┃╭╮╭┫┃━┫╭━┫╭╮┃╭╮┫╭╮┫┃━┫╭━┫┃┣┫╭╮┫╭╮┃
+┃┃┃╰┫┃━┫╰━┫╰╯┃┃┃┃┃┃┃┃━┫╰━┫╰┫┃┃┃┃╰╯┣┳┳╮
+╰╯╰━┻━━┻━━┻━━┻╯╰┻╯╰┻━━┻━━┻━┻┻╯╰┻━╮┣┻┻╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+`));
+ 
+ 
+function timerFunc() {
+    client.on('message', msg => {
+        client.guilds.get(ServerID).channels.get(ChannelID).send(Math.random().toString(36).substring(7))
+ 
+ 
+    });
+}
+ 
+var timer = setTimeout(timerFunc, 100);
+ 
+ 
+ 
+ 
+client.on('warn', console.warn);
+ 
+client.on('error', console.error);
+ 
+ 
+ 
+client.on('ready', () => console.log('ProBot Credits Miner Discord.js Script','\n','By Zeyad,Royale','\n','ProBot credits miner is ready!'));
+ 
+client.on('disconnect', () => console.log('PROBOT credits miner had disconnected!'));
+ 
+client.on('reconnecting', () => console.log('PROBOT credits miner is reconnecting...'));
+ 
+ 
+function timerFunc() {
+    client.on('message', msg => {
+        client.guilds.get(ServerID).channels.get(ChannelID).send(Math.random().toString(36).substring(7))
+ 
+ 
+    });
+}
+ 
+var timer = setTimeout(timerFunc, 100);
+ 
+client.on('warn', console.warn);
+ 
+client.on('error', console.error);
+ 
+ 
+ 
+client.on('ready', () => console.log('ProBot Credits Miner Discord.js Script','\n','By Zeyad,Royale','\n','ProBot credits miner is ready!'));
+ 
+client.on('disconnect', () => console.log('PROBOT credits miner had disconnected!'));
+ 
+client.on('reconnecting', () => console.log('PROBOT credits miner is reconnecting...'));
+ 
+ 
+function timerFunc() {
+    client.on('message', msg => {
+        client.guilds.get(ServerID).channels.get(ChannelID).send(Math.random().toString(36).substring(7))
+ 
+ 
+    });
+}
+ 
+var timer = setTimeout(timerFunc, 100);
+ 
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
