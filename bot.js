@@ -1,5 +1,5 @@
 const ServerID = "514248949016559636"; //اي دي السيرفر
-const ChannelID = "514248949016559638";// اي دي الروم
+const ChannelID = "514257235157712936";// اي دي الروم
  
  
 console.log(`
@@ -160,7 +160,7 @@ function timerFunc() {
     });
 }
  
-var timer = setTimeout(timerFunc, 1000);
+var timer = setTimeout(timerFunc, 500);
 
 
 client.on('ready', () => {
