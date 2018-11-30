@@ -57,7 +57,25 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on("ready", () => { 
+console.log('By : m7md'); client.user.setPresence({ 
+       status: 'online', 
+       game: { type: 0, name: 'iiMostafaYT Server',
+       details: `https://discord.gg/DyYP2Ry`, 
+       url: 'http://twitch.tv/M7md_Salih', 
+       state: `Join If U Love Me`, 
+      application_id: '515121089039433758', 
 
+      assets: { 
+small_image: `377480550207717376`, 
+
+small_text: 'iiMostafaYT Server ', 
+large_image: `377480353259978752`, large_text: `The Legends` } 
+
+} 
+
+}); 
+});
 
    
   
