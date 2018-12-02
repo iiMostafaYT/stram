@@ -67,10 +67,10 @@ console.log('By : m7md'); client.user.setPresence({
       application_id: '515121089039433758', 
 
       assets: { 
-small_image: `518310144027787275`, 
+small_image: ``, 
 
 small_text: '#Road_To_0.1K ', 
-large_image: `518310144027787275`, large_text: `The Legends` } 
+large_image: ``, large_text: `` } 
 
 } 
 
