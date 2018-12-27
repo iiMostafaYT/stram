@@ -12,7 +12,7 @@ client.on('message', message => {
       if (!devs.includes(message.author.id)) return;
      
   if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
+  client.user.setGame(argresult ,"https://www.google.com.eg")
       message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
   } else
     if (message.content === (adminprefix + "Percie")) {
@@ -57,25 +57,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("ready", () => { 
-console.log('By : m7md'); client.user.setPresence({ 
-       status: 'online', 
-       game: { type: 0, name: 'Road Server.',
-       details: `https://discord.gg/kgZDpqe`, 
-       url: 'http://twitch.tv/M7md_Salih', 
-       state: `Best Server & Clan Forever`, 
-      application_id: '515121089039433758', 
 
-      assets: { 
-small_image: ``, 
-
-small_text: '#Road_To_0.1K ', 
-large_image: ``, large_text: `` } 
-
-} 
-
-}); 
-});
 
    
   
