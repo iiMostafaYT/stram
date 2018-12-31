@@ -12,7 +12,7 @@ client.on('message', message => {
       if (!devs.includes(message.author.id)) return;
      
   if (message.content.startsWith(adminprefix + 'ply')) {
-  client.user.setGame(argresult ,"https://www.google.com.eg")
+  client.user.setGame(argresult);
       message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
   } else
     if (message.content === (adminprefix + "Percie")) {
