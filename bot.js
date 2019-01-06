@@ -3,7 +3,7 @@ const RichEmbed = require("discord.js");
 const { Client, Util } = require('discord.js');
 const client = new Discord.Client();
 const prefix = ".";
- 
+ ...
 const devs = ["467777208732352512"]
  
 const adminprefix = ".";
